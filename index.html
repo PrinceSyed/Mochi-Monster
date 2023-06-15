@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Rug Jumper</title>
+    <title>Unity WebGL Player | Monster Mochi</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+   
+    <script type="module" crossorigin src="./assets/index-f9496d0e.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -20,9 +22,13 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Rug Jumper</div>
+        <div id="unity-build-title">Monster Mochi</div>
       </div>
     </div>
+    <script>
+      document.body.appendChild(Object.assign(document.createElement("script"), { type: "text/javascript", src: "./network.js" }));
+    </script>
+    
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -56,15 +62,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/V0.0.3.loader.js";
+      var loaderUrl = buildUrl + "/V1.0.02.loader.js";
       var config = {
-        dataUrl: buildUrl + "/V0.0.3.data",
-        frameworkUrl: buildUrl + "/V0.0.3.framework.js",
-        codeUrl: buildUrl + "/V0.0.3.wasm",
+        dataUrl: buildUrl + "/V1.0.02.data",
+        frameworkUrl: buildUrl + "/V1.0.02.framework.js",
+        codeUrl: buildUrl + "/V1.0.02.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "SpikeNGMI",
-        productName: "Rug Jumper",
-        productVersion: "0.1",
+        companyName: "DefaultCompany",
+        productName: "Monster Mochi",
+        productVersion: "0.1.0",
         showBanner: unityShowBanner,
       };
 
@@ -76,25 +82,15 @@
       // config.matchWebGLToCanvasSize = false;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
-
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
