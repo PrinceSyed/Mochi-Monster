@@ -55,7 +55,6 @@ async function connect() {
     },
   };
 
-
   const web3Modal = new window.Web3Modal.default({
     providerOptions,
   });
