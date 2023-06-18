@@ -50,7 +50,7 @@ async function connect() {
     walletconnect: {
       package: window.WalletConnectProvider.default,
       options: {
-        infuraId: "https://mainnet.infura.io/v3/0aa48d253c0d4718b58bba790d5409cb",
+        infuraId: "https://eth-mainnet.g.alchemy.com/v2/rvOThFmNYlljFII5CQ8mHwkqFaECC4-B",
       },
     },
   };
