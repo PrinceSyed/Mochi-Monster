@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Monster Mochi</title>
+    <title>Unity WebGL Player | WebXR Test</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Monster Mochi</div>
+        <div id="unity-build-title">WebXR Test</div>
       </div>
     </div>
     <script src="web3/index.js"></script>
@@ -57,15 +57,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/V3.loader.js";
+      var loaderUrl = buildUrl + "/V3.1.loader.js";
       var config = {
-        dataUrl: buildUrl + "/V3.data",
-        frameworkUrl: buildUrl + "/V3.framework.js",
-        codeUrl: buildUrl + "/V3.wasm",
+        dataUrl: buildUrl + "/V3.1.data",
+        frameworkUrl: buildUrl + "/V3.1.framework.js",
+        codeUrl: buildUrl + "/V3.1.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Monster Mochi",
-        productVersion: "0.1.0",
+        productName: "WebXR Test",
+        productVersion: "1.0.2",
         showBanner: unityShowBanner,
       };
 
