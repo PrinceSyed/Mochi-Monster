@@ -41,8 +41,8 @@ window.web3ChainId = 1;
 
 window.networks = [
   {
-    id: 1,
-    label: "Ethereum Goerli",
+    id: 5,
+    label: "Ethereum",
     token: "ETH",
     rpcUrl: `https://eth-mainnet.g.alchemy.com/v2/rvOThFmNYlljFII5CQ8mHwkqFaECC4-B`,
   }
