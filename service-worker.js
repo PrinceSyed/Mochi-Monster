@@ -1,9 +1,9 @@
 const cacheName = "Mochi Monster";
 const contentToCache = [
-    "Build/V82.loader.js",
-    "Build/V82.framework.js",
-    "Build/V82.data",
-    "Build/V82.wasm",
+    "Build/V83.loader.js",
+    "Build/V83.framework.js",
+    "Build/V83.data",
+    "Build/V83.wasm",
 
 ];
 
