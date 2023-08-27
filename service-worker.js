@@ -32,17 +32,17 @@ self.addEventListener('fetch', function (e) {
     })());
 });
 
-if (navigator.storage && navigator.storage.persist) {
-  navigator.storage.persist().then((persistent) => {
-      if (persistent) {
-          console.log("Storage will be persistent and not cleared except by explicit user action");
-      } else {
-          console.log("Storage may be cleared by the browser under storage pressure.");
-      }
-  });
-}
+// if (navigator.storage && navigator.storage.persist) {
+//   navigator.storage.persist().then((persistent) => {
+//       if (persistent) {
+//           console.log("Storage will be persistent and not cleared except by explicit user action");
+//       } else {
+//           console.log("Storage may be cleared by the browser under storage pressure.");
+//       }
+//   });
+// }
 
-navigator.storage.estimate().then((estimate) => {
-  console.log(`Using ${estimate.usage} out of ${estimate.quota} bytes.`);
-});
+// navigator.storage.estimate().then((estimate) => {
+//   console.log(`Using ${estimate.usage} out of ${estimate.quota} bytes.`);
+// });
 
